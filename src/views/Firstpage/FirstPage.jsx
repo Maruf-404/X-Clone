@@ -1,4 +1,4 @@
-import Logo from "../../assets/Xlogo.PNG";
+import Logo from "../../assets/Xlogo.png";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 import "./FirstPage.css";
