@@ -1,0 +1,38 @@
+.trending {
+  border: 3px solid #111;
+  width: 25rem;
+  height: 27rem;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.trending > h2 {
+  padding: 1rem;
+}
+
+.footer {
+  font-size: 0.8rem;
+  color: rgb(113, 118, 123);
+  padding: 1rem;
+}
+
+.trending-hashtags {
+  width: 20rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.trending-hashtags > p {
+    color: rgb(113, 118, 123);
+}
+
+.trending-hashtags > h5 {
+    font-size: 1.1rem;
+}

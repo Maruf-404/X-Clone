@@ -1,0 +1,38 @@
+.post {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.create-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.create-post-form {
+  gap: 12px;
+  width: 32.4rem;
+}
+
+.create-post-avatar {
+  border-radius: 50% !important;
+  padding: 0;
+  margin: 0.1rem 0.8rem;
+}
+
+.create-post-input {
+  border: none;
+  font-size: 1.2rem;
+  background-color: #111;
+  color: #fff;
+  resize: none;
+  outline: none;
+  width: 100%;
+  overflow: hidden;
+}
+.create-post-btns {
+  display: flex;
+  justify-content: flex-end;
+}

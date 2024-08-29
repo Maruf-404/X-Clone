@@ -1,0 +1,67 @@
+.feed-card {
+  width: 35.4rem;
+  background-color: #000000;
+  border: 0.2rem solid #111;
+  padding: 0;
+  font-weight: 400;
+}
+
+.feed-card-text {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  padding: 0;
+  margin: 0.8rem;
+}
+
+.username-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.feed-card-image {
+    object-fit: cover; 
+    background-size: cover;
+    border-radius: 1rem;
+    height: 31.25rem;
+    width: 31.25rem;
+}
+
+.feed-card-action {
+    width: 100%;
+    color: var(--twitter-text);
+    display: flex;
+    position: relative;
+    top: .8rem;
+    gap: 3rem;
+}
+
+.feed-card-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icon-button {
+    display: flex;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.repeat-icon :hover {
+   color: #0099ff;
+}
+
+.favorite-icon:hover {
+    color: #ed64a6;
+}
+
+.bookmark-icon:hover {
+    color: #48bb78;
+}

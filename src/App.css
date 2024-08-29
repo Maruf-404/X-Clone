@@ -1,0 +1,28 @@
+body {
+  --primary: #000000;
+  --secondry: #e7e9ea;
+  --teriatry: #1d98f0;
+  --light: rgb(113, 118, 123);
+  background-color: var(--primary);
+  color: var(--secondry);
+}
+
+
+
+.app {
+  display: flex;
+  height: 100vh;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

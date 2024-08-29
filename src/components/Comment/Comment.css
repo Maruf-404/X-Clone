@@ -1,0 +1,83 @@
+.comment {
+  width: 35.4rem;
+  background-color: var(--primary);
+  border: 0.2rem solid #111;
+  padding: 0;
+  font-weight: 400;
+}
+
+.comment-text {
+  display: flex;
+  align-items: center;
+  font-size: "1rem";
+}
+
+.avatar {
+  border-radius: 50%;
+  padding: 0;
+  margin: 0.8rem;
+}
+
+.username-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comment-action {
+  width: "100%";
+  color: var(--secondary);
+  display: "flex";
+  position: relative;
+  top: 0.8rem;
+  gap: 3rem;
+}
+
+.comment-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-button {
+  display: flex;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.repeat-icon :hover {
+  color: #0099ff;
+}
+
+.favorite-icon:hover {
+  color: #ed64a6;
+}
+
+.chatbubble-icon:hover {
+  color: #4299e1;
+}
+
+.add-comment-content {
+  border: none;
+  font-size: 1rem;
+  background-color: #111;
+  color: #fff;
+  resize: none;
+  outline: none;
+  width: 25rem;
+  height: 8rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-comment {
+  gap: 1.5rem;
+  width: 32.4rem;
+}
