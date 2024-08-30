@@ -31,7 +31,7 @@ function Profile() {
   const [profileData, setProfileData] = useState([]);
   let accessToken = getCookie("accessToken");
 
-  const itemSize = 750;
+  const itemSize = 200;
   const listHeight = 500;
   const listWidth = "100%";
 

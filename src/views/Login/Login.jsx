@@ -84,6 +84,7 @@ function Login() {
             label="Password"
             value={password}
             required
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
 

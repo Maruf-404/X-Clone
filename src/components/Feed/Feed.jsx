@@ -15,7 +15,7 @@ function Feed() {
   const feedData = useSelector((state) => state.allPost.allPosts);
   const loading = useSelector((state) => state.allPost.status);
 
-  const itemSize = 750;
+  const itemSize = 200;
   const listHeight = 800;
   const listWidth = "100%";
 

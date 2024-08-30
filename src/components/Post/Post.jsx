@@ -17,7 +17,7 @@ function Post() {
   const [loading, setLoading] = useState(true);
   let { id } = useParams();
   const dispatch = useDispatch();
-  const itemSize = 220;
+  const itemSize = 200;
   const listHeight = 600;
   const listWidth = "100%";
 
