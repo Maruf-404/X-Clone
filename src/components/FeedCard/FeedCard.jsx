@@ -138,7 +138,7 @@ export default function FeedCard({ data = {}, pl, id }) {
             alt="post"
             src={images ? `${images[0]?.url}` : ""}
             onError={(event) => (event.target.style.display = "none")}
-            placeholderSrc={placeholderSrc}
+            placeholderSrc={images ? placeholderSrc : " "}
             effect="blur"
           />
         </Link>
