@@ -10,5 +10,5 @@ const config = {
 };
 
 export const fetchUserProfile = () => {
-  return axios.get("https://apihub.up.railway.app/api/v1/social-media/profile", config);
+  return axios.get("https://infinity-api-94fa.onrender.com/api/v1/social-media/profile", config);
 };

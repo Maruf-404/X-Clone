@@ -14,7 +14,7 @@ document.title = "X clone | Email verification"
         },
       };
       const res = await axios.post(
-        "http://localhost:8080/api/v1/users/resend-email-verification",
+        "https://infinity-api-94fa.onrender.com/api/v1/users/resend-email-verification",
         {},
         config
       );

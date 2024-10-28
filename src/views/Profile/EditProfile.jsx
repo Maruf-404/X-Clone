@@ -48,7 +48,7 @@ function EditProfile() {
 
       const dataToSend = { ...formData };
       const { data } = await axios.patch(
-        "https://apihub.up.railway.app/api/v1/social-media/profile",
+        "https://infinity-api-94fa.onrender.com/api/v1/social-media/profile",
         dataToSend,
         config
       );
@@ -70,7 +70,7 @@ function EditProfile() {
       const dataToSend = new FormData();
       dataToSend.append("coverImage", coverImage);
       const { data } = await axios.patch(
-        "https://apihub.up.railway.app/api/v1/social-media/profile/cover-image",
+        "https://infinity-api-94fa.onrender.com/api/v1/social-media/profile/cover-image",
         dataToSend,
         config
       );
@@ -91,7 +91,7 @@ function EditProfile() {
       const dataTosend = new FormData();
       dataTosend.append("avatar", avatar);
       const { data } = await axios.patch(
-        "https://apihub.up.railway.app/api/v1/users/avatar",
+        "https://infinity-api-94fa.onrender.com/api/v1/users/avatar",
         dataTosend,
         config
       );

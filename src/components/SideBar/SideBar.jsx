@@ -33,7 +33,7 @@ function Sidebar() {
     };
     try {
       const res = await axios.post(
-        "https://apihub.up.railway.app/api/v1/users/logout",
+        "https://infinity-api-94fa.onrender.com/api/v1/users/logout",
         {},
         config
       );

@@ -79,7 +79,7 @@ function Signup() {
           },
         };
         const { res } = await axios.post(
-          "https://apihub.up.railway.app/api/v1/users/register",
+          "https://infinity-api-94fa.onrender.com/api/v1/users/register",
           {
             email,
             password,

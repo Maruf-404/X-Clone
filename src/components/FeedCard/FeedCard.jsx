@@ -50,7 +50,7 @@ export default function FeedCard({ data = {}, pl, id }) {
 
     try {
       const response = await axios.post(
-        `https://apihub.up.railway.app/api/v1/social-media/like/post/${id}`,
+        `https://infinity-api-94fa.onrender.com/api/v1/social-media/like/post/${id}`,
         {},
         config
       );
@@ -76,7 +76,7 @@ export default function FeedCard({ data = {}, pl, id }) {
 
     try {
       const response = await axios.post(
-        `https://apihub.up.railway.app/api/v1/social-media/bookmarks/${id}`,
+        `https://infinity-api-94fa.onrender.com/api/v1/social-media/bookmarks/${id}`,
         {},
         config
       );

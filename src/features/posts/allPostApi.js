@@ -13,14 +13,14 @@ const config = {
 
 export const fetchAllPosts = () => {
   return axios.get(
-    "https://apihub.up.railway.app/api/v1/social-media/posts?page=1&limit=10",
+    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts?page=1&limit=10",
     config
   );
 };
 
 export const toggleLikePost = (id) => {
   return axios.post(
-    `https://apihub.up.railway.app/api/v1/social-media/like/post/${id}`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/like/post/${id}`,
     {},
     config
   );

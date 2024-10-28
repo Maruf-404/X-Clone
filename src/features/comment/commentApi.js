@@ -11,14 +11,14 @@ const config = {
 
 export const fetchComments = (id) => {
   return axios.get(
-    `https://apihub.up.railway.app/api/v1/social-media/comments/post/${id}?page=1&limit=10`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/post/${id}?page=1&limit=10`,
     config
   );
 };
 
 export const addComments = (id, data) => {
   return axios.post(
-    `https://apihub.up.railway.app/api/v1/social-media/comments/post/${id}`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/post/${id}`,
     {
       content: data,
     },
@@ -28,14 +28,14 @@ export const addComments = (id, data) => {
 
 export const deleteComments = (id) => {
   return axios.delete(
-    `https://apihub.up.railway.app/api/v1/social-media/comments/${id}`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/${id}`,
     config
   );
 };
 
 export const updateComments = (id, data) => {
   return axios.patch(
-    `https://apihub.up.railway.app/api/v1/social-media/comments/${id}`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/${id}`,
     {
       content: data,
     },

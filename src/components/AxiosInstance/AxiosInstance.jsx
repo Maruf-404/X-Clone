@@ -6,7 +6,7 @@ const accessToken = getCookie('accessToken');
 
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8080/api/v1', 
+  baseURL: 'https://infinity-api-94fa.onrender.com', 
   headers: {
     Authorization: accessToken ? `Bearer ${accessToken}` : '',
     'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ axiosInstance.interceptors.response.use(
       if (refreshToken) {
         try {
           const response = await axios.post(
-            'http://localhost:8080/api/v1/users/refresh-token',
+            'https://infinity-api-94fa.onrender.com/api/v1/users/refresh-token',
             { refreshToken }
           );
           

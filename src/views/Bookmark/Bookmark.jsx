@@ -22,7 +22,7 @@ function Bookmark() {
     };
     try {
       const res = await axios.get(
-        "https://apihub.up.railway.app/api/v1/social-media/bookmarks?page=1&limit=5",
+        "https://infinity-api-94fa.onrender.com/api/v1/social-media/bookmarks?page=1&limit=5",
         config
       );
 

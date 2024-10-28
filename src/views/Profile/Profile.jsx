@@ -48,7 +48,7 @@ function Profile() {
       try {
         await axios
           .get(
-            "https://apihub.up.railway.app/api/v1/social-media/profile",
+            "https://infinity-api-94fa.onrender.com/api/v1/social-media/profile",
             config
           )
           .then((res) => {

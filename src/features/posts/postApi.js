@@ -18,7 +18,7 @@ const config2 = {
 
 export const createPost = (data) => {
   return axios.post(
-    "https://apihub.up.railway.app/api/v1/social-media/posts",
+    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts",
     data,
     config
   );
@@ -27,14 +27,14 @@ export const createPost = (data) => {
 
 export const fetchPosts = () => {
   return axios.get(
-    "https://apihub.up.railway.app/api/v1/social-media/posts/get/my?page=1&limit=10",
+    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/get/my?page=1&limit=10",
     config
   );
 };
 
 export const deletePost = (id) => {
   return axios.delete(
-    `https://apihub.up.railway.app/api/v1/social-media/posts/${id}`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/${id}`,
     config
   );
 };
@@ -42,7 +42,7 @@ export const deletePost = (id) => {
 export const updatePost = (id, data) => {
    
   return axios.patch(
-    `https://apihub.up.railway.app/api/v1/social-media/posts/${id}`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/${id}`,
     data,
     config2
   );
@@ -51,7 +51,7 @@ export const updatePost = (id, data) => {
 
 export const fetchSinglePost = (id) => {
   return axios.get(
-    `https://apihub.up.railway.app/api/v1/social-media/posts/${id}`,
+    `https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/${id}`,
     config
   );
 }
