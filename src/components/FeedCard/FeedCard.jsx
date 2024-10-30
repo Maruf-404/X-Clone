@@ -21,6 +21,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useSelector } from "react-redux";
 import placeholderSrc from "../../assets/placeholderSrc.jfif";
 import "./FeedCard.css";
+import "../../App.css"
 
 export default function FeedCard({ data = {}, pl, id }) {
   const { content, tags, images, comments, likes, isLiked, isBookmarked, _id } =

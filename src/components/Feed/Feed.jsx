@@ -20,7 +20,7 @@ function Feed() {
   const listWidth = "100%";
 
   const Row = ({ index, style }) => (
-    <div style={style}>
+    <div>
       <FeedCard
         key={feedData[index]._id}
         id={feedData[index]._id}
