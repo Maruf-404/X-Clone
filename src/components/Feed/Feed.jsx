@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllAsync } from "../../features/posts/allPostsSlice";
 import CardSkeleton from "../Skeleton/CardSkeleton";
 import CreatePost from "../Post/CreatePost";
-import { FixedSizeList as List } from "react-window";
+import { List } from "react-virtualized";
 import { fetchUserAsync } from "../../features/User/userSlice";
 
 
@@ -15,12 +15,12 @@ function Feed() {
   const feedData = useSelector((state) => state.allPost.allPosts);
   const loading = useSelector((state) => state.allPost.status);
 
-  const itemSize = 200;
+  const itemSize = 710
   const listHeight = 800;
-  const listWidth = "100%";
+  const listWidth = 800
 
   const Row = ({ index, style }) => (
-    <div>
+    <div style={style}>
       <FeedCard
         key={feedData[index]._id}
         id={feedData[index]._id}
@@ -52,13 +52,13 @@ function Feed() {
         feedData && (
           <List
             height={listHeight}
-            itemCount={feedData.length}
-            itemSize={itemSize}
+            rowCount={feedData.length}
+            rowHeight={itemSize}
             width={listWidth}
+            rowRenderer={Row}
             className="hide-scrollbar"
-          >
-            {Row}
-          </List>
+          />
+            
         )
       )}
     </div>

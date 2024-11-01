@@ -17,7 +17,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import getCookie from "../../Cookies/GetCookie";
 import AddComment from "../Comment/AddComment";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useSelector } from "react-redux";
 import placeholderSrc from "../../assets/placeholderSrc.jfif";
 import "./FeedCard.css";
@@ -35,6 +34,7 @@ export default function FeedCard({ data = {}, pl, id }) {
   const user = useSelector((state) => state.user.user);
   const isOwner = user?.account?._id === data?.author?.account._id;
   let accessToken = getCookie("accessToken");
+
 
   useEffect(() => {
     setTempLike(isLiked);
@@ -89,6 +89,7 @@ export default function FeedCard({ data = {}, pl, id }) {
     }
   };
 
+
   return (
     <Card className="feed-card">
       <Typography
@@ -133,14 +134,15 @@ export default function FeedCard({ data = {}, pl, id }) {
             {tags ? tags : "#tags"}
           </Typography>
 
-          <LazyLoadImage
+          <img
             className="feed-card-image"
-            component="img"
+            // component="img"
             alt="post"
             src={images ? `${images[0]?.url}` : ""}
             onError={(event) => (event.target.style.display = "none")}
-            placeholderSrc={images ? placeholderSrc : " "}
-            effect="blur"
+            data-src={placeholderSrc}
+            loading="lazy"
+            // effect="black-and-white"
           />
         </Link>
         <div className="feed-card-action">
