@@ -124,7 +124,7 @@ export default function FeedCard({ data = {}, pl, id }) {
       <CardContent sx={{ pl: pl }}>
         <Link style={{ textDecoration: "none" }} to={`/post/${_id}`}>
           <Typography
-            sx={{ mb: 2 }}
+            sx={{ mb: 2, height: "6rem" }}
             variant="div"
             component="p"
             color="secondary.main"

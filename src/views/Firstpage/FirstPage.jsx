@@ -1,4 +1,5 @@
 import Logo from "../../assets/Xlogo.png";
+import GuestAccount from "../../components/GuestAccount/GuestAccount.jsx";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 import "./FirstPage.css";
@@ -11,14 +12,16 @@ function FirstPage() {
           <img src={Logo} alt="" />
         </div>
         <div className="first-page-action">
-          <h1 style={{}}>Happening now</h1>
+          <h1>Happening now</h1>
           <h2>Join Today.</h2>
+          <div>
           <Signup />
-
+          <GuestAccount/>
+          </div>
+        
           <p>
-            {" "}
-            By signing up, you agree to the Terms of Service and Privacy Policy,
-            <br /> including Cookie Use.
+       <b>Attention </b>  Please wait for 50 seconds after making first api call
+            <br /> because it&apos;s hosted on a free server
           </p>
           <h5>Already have an account ?</h5>
           <Login />
