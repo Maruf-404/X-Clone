@@ -1,83 +1,83 @@
 .comment {
-  width: 35.4rem;
-  background-color: var(--primary);
-  border: 0.2rem solid #111;
-  padding: 0;
-  font-weight: 400;
+  width: 35.4rem !important;
+  background-color: var(--primary) !important;
+  border: 0.2rem solid #111 !important;
+  padding: 0 !important;
+  font-weight: 400 !important ;
 }
 
 .comment-text {
-  display: flex;
-  align-items: center;
-  font-size: "1rem";
+  display: flex !important;
+  align-items: center !important;
+  font-size: "1rem" !important;
 }
 
 .avatar {
-  border-radius: 50%;
-  padding: 0;
-  margin: 0.8rem;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  margin: 0.8rem !important;
 }
 
 .username-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
 }
 
 .comment-action {
-  width: "100%";
-  color: var(--secondary);
-  display: "flex";
-  position: relative;
-  top: 0.8rem;
-  gap: 3rem;
+  width: "100%" !important;
+  color: var(--secondary) !important;
+  display: "flex" !important;
+  position: relative !important;
+  top: 0.8rem !important;
+  gap: 3rem !important;
 }
 
 .comment-icons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
 }
 
 .icon-button {
-  display: flex;
-  font-size: 12px;
-  transition: color 0.3s ease;
+  display: flex !important;
+  font-size: 12px !important;
+  transition: color 0.3s ease !important;
 }
 
 .repeat-icon :hover {
-  color: #0099ff;
+  color: #0099ff !important;
 }
 
 .favorite-icon:hover {
-  color: #ed64a6;
+  color: #ed64a6 !important;
 }
 
 .chatbubble-icon:hover {
-  color: #4299e1;
+  color: #4299e1 !important;
 }
 
 .add-comment-content {
-  border: none;
-  font-size: 1rem;
-  background-color: #111;
-  color: #fff;
-  resize: none;
-  outline: none;
-  width: 25rem;
-  height: 8rem;
-  overflow: hidden;
-  border-radius: 1rem;
-  text-align: center;
-}
-
-.btn-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.edit-comment {
-  gap: 1.5rem;
-  width: 32.4rem;
+  border: none !important;
+  font-size: 1rem !important;
+  background-color: #111 !important;
+  color: #fff !important;
+  resize: none !important ;
+  outline: none !important ;
+  width: 25rem !important ;
+  height: 8rem !important ;
+  overflow: hidden !important ;
+  border-radius: 1rem !important ;
+  text-align: center !important ;
+} 
+ 
+.btn-container { 
+  display: flex !important ;
+  justify-content: flex-end !important ;
+} 
+ 
+.edit-comment { 
+  gap: 1.5rem !important ;
+  width: 32.4rem !important ;
 }
