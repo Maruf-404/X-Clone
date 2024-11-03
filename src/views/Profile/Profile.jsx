@@ -21,6 +21,7 @@ import { fetchPostAsync } from "../../features/posts/postsSlice";
 import "./Profile.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import placeholderSrc from "../../assets/placeholderSrc.jfif";
+import { toast } from "react-toastify";
 
 function Profile() {
   // const [myPost, setMyPost] = useState([]);
@@ -57,6 +58,7 @@ function Profile() {
         setLoading(false);
       } catch (error) {
         console.log("Error in Profile", error);
+        toast.error("PLease refresh the page")
       }
     };
     getMyProfile();

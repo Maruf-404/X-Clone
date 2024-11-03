@@ -1,6 +1,6 @@
 .feed-card {
   width: 35.4rem;
-  background-color: var(--primary);
+  background-color: var(--primary) !important;
   border: 0.2rem solid #111;
   padding: 0;
   font-weight: 400;

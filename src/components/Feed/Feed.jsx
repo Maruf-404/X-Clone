@@ -19,8 +19,8 @@ function Feed() {
   const listHeight = 800;
   const listWidth = 800
 
-  const Row = ({ index, style }) => (
-    <div style={style}>
+  const Row = ({ index, key }) => (
+    <div key={key} >
       <FeedCard
         key={feedData[index]._id}
         id={feedData[index]._id}

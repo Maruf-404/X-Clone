@@ -20,7 +20,7 @@ function FirstPage() {
           </div>
         
           <p>
-       <b>Attention </b>  Please wait for 50 seconds after making first api call
+       <b>Attention </b>  Please wait for 50 seconds after making first an api call
             <br /> because it&apos;s hosted on a free server
           </p>
           <h5>Already have an account ?</h5>
