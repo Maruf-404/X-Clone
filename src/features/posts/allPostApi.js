@@ -13,7 +13,7 @@ const config = {
 
 export const fetchAllPosts = () => {
   return axios.get(
-    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts?page=1&limit=10",
+    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts?page=1&limit=20",
     config
   );
 };

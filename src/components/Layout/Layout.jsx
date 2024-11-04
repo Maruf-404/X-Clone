@@ -17,7 +17,7 @@ function Layout({ children }) {
   }, [accessToken])
 
   return (
-    <div style={{ display: "flex", padding: "1rem 5rem 0 9rem", }}>
+    <div style={{ display: "flex", justifyContent: "center"}}>
       <div>
         {" "}
         <Sidebar />

@@ -65,8 +65,10 @@ export const commentSlice = createSlice({
         state.comments.splice(index, 1)
         toast.success("Comment deleted")
       })
-      .addCase(updateCommentAsync.fulfilled, (state) => {
+      .addCase(updateCommentAsync.fulfilled, (state, action) => {
         state.status = false;
+        const index = state.comments.findIndex((post) => post.id === action.payload._id)
+        state.comments.splice(index, 1,action.payload)
         toast.success("Comment Updated")
       })
   },

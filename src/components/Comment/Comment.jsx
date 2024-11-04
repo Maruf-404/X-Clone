@@ -25,12 +25,12 @@ import "./Comment.css";
 function Comment({ data, pl}) {
   const { content, likes, isLiked, _id } = data;
   const { firstName, lastName } = data.author;
-  const { url } = data.author.account.avatar;
+  const url = data?.author?.account?.avatar?.url || "";
   const [tempLike, setTempLike] = useState(isLiked)
   const [likeCount, setLikeCount] = useState(likes);
   let accessToken = getCookie("accessToken");
   const user = useSelector((state) => state.user.user);
-  const isOwner = user?.account?._id === data.author.account._id;
+  const isOwner = user?.account?._id === data?.author?.account?._id;
 
   useEffect(() => {
     setTempLike(isLiked)

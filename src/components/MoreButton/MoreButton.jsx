@@ -42,6 +42,7 @@ export default function MenuButton({ id, component, isOwner}) {
     } else {
       dispatch(deleteCommentAsync(id))
     }
+    handleClose()
    
   };
 
@@ -56,6 +57,7 @@ export default function MenuButton({ id, component, isOwner}) {
       actionMap[option]();
     }
   };
+  
 
 if (!isOwner) {
   return null

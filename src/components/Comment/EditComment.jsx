@@ -9,22 +9,21 @@ import { updateCommentAsync } from "../../features/comment/commentSlice";
 import { useNavigate } from "react-router-dom";
 import "./Comment.css";
 
-function EditComment({id}) {
-    const [content, setContent] = useState("") 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+function EditComment({ handleClose, id }) {
+  const [content, setContent] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-
- const submitHandler = async(e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     if (!content) {
       toast.info("content is required");
       return;
     }
- dispatch(updateCommentAsync({id, data: content}))
-  navigate(`/home`)
-
- }
+    dispatch(updateCommentAsync({ id, data: content }));
+    handleClose();
+   
+  };
 
   return (
     <FormControl className="edit-comment">
@@ -45,7 +44,7 @@ function EditComment({id}) {
         onClick={submitHandler}
       />
     </FormControl>
-  )
+  );
 }
 
-export default EditComment
+export default EditComment;
