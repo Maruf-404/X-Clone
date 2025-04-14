@@ -6,7 +6,7 @@ const accessToken = getCookie('accessToken');
 
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8080/api/v1",
+  baseURL: "https://apihub-i6jo.onrender.com/api/v1",
   headers: {
     Authorization: accessToken ? `Bearer ${accessToken}` : "",
     "Content-Type": "application/json",
