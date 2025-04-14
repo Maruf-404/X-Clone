@@ -10,7 +10,7 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import { useNavigate } from "react-router-dom";
 import XButton from "../XCustom/XButton";
 import LogoutIcon from "@mui/icons-material/Logout";
-import axios from "axios";
+import axios from "../AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
 import removeCookie from "../../Cookies/RemoveCookie";
 import XModal from "../XCustom/XModal";
@@ -33,7 +33,7 @@ function Sidebar() {
     };
     try {
       const res = await axios.post(
-        "https://infinity-api-94fa.onrender.com/api/v1/users/logout",
+        "/users/logout",
         {},
         config
       );

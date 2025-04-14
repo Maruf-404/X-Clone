@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
 
 let accessToken = getCookie("accessToken");
@@ -11,14 +11,14 @@ const config = {
 
 export const fetchComments = (id) => {
   return axios.get(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/post/${id}?page=1&limit=10`,
+    `/social-media/comments/post/${id}?page=1&limit=10`,
     config
   );
 };
 
 export const addComments = (id, data) => {
   return axios.post(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/post/${id}`,
+    `/social-media/comments/post/${id}`,
     {
       content: data,
     },
@@ -28,14 +28,14 @@ export const addComments = (id, data) => {
 
 export const deleteComments = (id) => {
   return axios.delete(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/${id}`,
+    `/social-media/comments/${id}`,
     config
   );
 };
 
 export const updateComments = (id, data) => {
   return axios.patch(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/comments/${id}`,
+    `/social-media/comments/${id}`,
     {
       content: data,
     },

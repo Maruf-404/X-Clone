@@ -1,8 +1,8 @@
 import { toast } from "react-toastify";
 import setCookie from "../../Cookies/SetCookie";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import XButton from "../XCustom/XButton";
+import axios from "../AxiosInstance/AxiosInstance"
 
 
 function GuestAccount() {
@@ -17,10 +17,10 @@ function GuestAccount() {
             },
           };
           const { data } = await axios.post(
-            "https://infinity-api-94fa.onrender.com/api/v1/users/login",
+            "users/login",
             {
               username: "guest",
-              password: "Guest@99",
+              password: "React@dev1",
             },
             config
           );

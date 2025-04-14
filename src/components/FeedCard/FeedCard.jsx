@@ -14,7 +14,7 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
 import AddComment from "../Comment/AddComment";
 import { useSelector } from "react-redux";
@@ -51,7 +51,7 @@ export default function FeedCard({ data = {}, pl, id }) {
 
     try {
       const response = await axios.post(
-        `https://infinity-api-94fa.onrender.com/api/v1/social-media/like/post/${id}`,
+        `/social-media/like/post/${id}`,
         {},
         config
       );
@@ -77,7 +77,7 @@ export default function FeedCard({ data = {}, pl, id }) {
 
     try {
       const response = await axios.post(
-        `https://infinity-api-94fa.onrender.com/api/v1/social-media/bookmarks/${id}`,
+        `/social-media/bookmarks/${id}`,
         {},
         config
       );

@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
 
 let accessToken = getCookie("accessToken");
 const config = {
   headers: {
     Authorization: `Bearer ${accessToken}`,
-    accept: "application/json", 
+    accept: "application/json",
   },
 };
 
@@ -18,41 +18,37 @@ const config2 = {
 
 export const createPost = (data) => {
   return axios.post(
-    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts",
+    "/social-media/posts",
     data,
-    config
+    config2
   );
-
 };
 
 export const fetchPosts = () => {
   return axios.get(
-    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/get/my?page=1&limit=10",
+    "/social-media/posts/get/my?page=1&limit=10",
     config
   );
 };
 
 export const deletePost = (id) => {
   return axios.delete(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/${id}`,
+    `/social-media/posts/${id}`,
     config
   );
 };
 
 export const updatePost = (id, data) => {
-   
   return axios.patch(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/${id}`,
+    `/social-media/posts/${id}`,
     data,
     config2
   );
 };
 
-
 export const fetchSinglePost = (id) => {
   return axios.get(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/posts/${id}`,
+    `/social-media/posts/${id}`,
     config
   );
-}
-
+};

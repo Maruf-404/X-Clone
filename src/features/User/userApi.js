@@ -1,14 +1,17 @@
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
 
 let accessToken = getCookie("accessToken");
 const config = {
   headers: {
     Authorization: `Bearer ${accessToken}`,
-    accept: "application/json", 
+    accept: "application/json",
   },
 };
 
 export const fetchUserProfile = () => {
-  return axios.get("https://infinity-api-94fa.onrender.com/api/v1/social-media/profile", config);
+  return axios.get(
+    "/social-media/profile",
+    config
+  );
 };

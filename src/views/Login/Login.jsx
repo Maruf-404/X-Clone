@@ -1,5 +1,5 @@
 import { FormControl, Typography } from "@mui/material";
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import setCookie from "../../Cookies/SetCookie";
@@ -39,7 +39,7 @@ function Login() {
         },
       };
       const { data } = await axios.post(
-        "https://infinity-api-94fa.onrender.com/api/v1/users/login",
+        "users/login",
         {
           username,
           password,

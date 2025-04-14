@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
 import { FormControl, Typography } from "@mui/material";
 import { useState } from "react";
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance"
 import XInput from "../../components/XCustom/XInput";
 import XModal from "../../components/XCustom/XModal";
 import XButton from "../../components/XCustom/XButton";
@@ -79,7 +79,7 @@ function Signup() {
           },
         };
         const { res } = await axios.post(
-          "https://infinity-api-94fa.onrender.com/api/v1/users/register",
+          "/users/register",
           {
             email,
             password,
@@ -88,7 +88,10 @@ function Signup() {
           },
           config
         );
+        console.log(res);
         toast.success("Registratipn Successful");
+       
+        
         handleClose();
       } catch (error) {
         console.log("Error in signup", error);

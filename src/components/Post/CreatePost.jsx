@@ -13,19 +13,28 @@ import placeholderSrc from "../../assets/placeholderSrc.jfif";
 
 function CreatePost({ handleClose }) {
   const [content, setContent] = useState("");
-  const [images, setImages] = useState("");
+  const [image, setImage] = useState(null); 
   const [tags, setTags] = useState("");
   const avatar = useSelector((state) => state.user.user?.account?.avatar.url);
   const dispatch = useDispatch();
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      setImage(file);
+    } else if (file) {
+      toast.error("Please select a valid image file");
+    }
+  };
   const submitHandler = async () => {
     if (!content) {
-      toast.info("All fields are required");
+      toast.info("content field is required");
       return;
     }
-
+    console.log(image);
+    
     const multiPartData = new FormData();
-    multiPartData.append("images", images);
+    multiPartData.append("image", image);
     multiPartData.append("content", content);
     tags.split(",").forEach((tag, idx) => {
       multiPartData.append(`tags[${idx}]`, tag.trim());
@@ -36,7 +45,6 @@ function CreatePost({ handleClose }) {
       handleClose();
     }
   };
-
   return (
     <Box className="create-post">
       <FormControl className="create-post-form">
@@ -47,7 +55,6 @@ function CreatePost({ handleClose }) {
             alt="postImage"
             src={avatar ? avatar : placeholderSrc}
           />
-        
           <textarea
             className="create-post-input"
             placeholder="What is Happening ?!"
@@ -58,11 +65,11 @@ function CreatePost({ handleClose }) {
 
         <input
           className="create-post-input"
-          placeholder="#"
+          placeholder="#tags (comma separated)"
           value={tags}
-          required
           onChange={(e) => setTags(e.target.value)}
         />
+
         <Box className="create-post-btns">
           <Button
             component="label"
@@ -70,8 +77,9 @@ function CreatePost({ handleClose }) {
             startIcon={<ImageOutlinedIcon color="teriatry" />}
           >
             <XhiddenInput
-              onChange={(e) => setImages(e.target.files[0])}
-              name="images"
+              onChange={handleImageChange}
+              name="image"
+              accept="image/*"
             />
           </Button>
           <XButton

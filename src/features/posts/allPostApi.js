@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
 
 let accessToken = getCookie("accessToken");
@@ -13,14 +13,14 @@ const config = {
 
 export const fetchAllPosts = () => {
   return axios.get(
-    "https://infinity-api-94fa.onrender.com/api/v1/social-media/posts?page=1&limit=20",
+    "/social-media/posts?page=1&limit=20",
     config
   );
 };
 
 export const toggleLikePost = (id) => {
   return axios.post(
-    `https://infinity-api-94fa.onrender.com/api/v1/social-media/like/post/${id}`,
+    `/social-media/like/post/${id}`,
     {},
     config
   );

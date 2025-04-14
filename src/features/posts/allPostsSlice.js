@@ -24,7 +24,7 @@ export const allPostsSlice = createSlice({
         state.status = true;
       })
       .addCase(fetchAllAsync.fulfilled, (state, action) => {
-        state.status = false;
+        state.status = false;      
         state.allPosts = action.payload;
       });
   },

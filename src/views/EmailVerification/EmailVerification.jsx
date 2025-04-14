@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/material";
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance"
 import getCookie from "../../Cookies/GetCookie";
 
 function EmailVerification() {
@@ -14,7 +14,7 @@ document.title = "X clone | Email verification"
         },
       };
       const res = await axios.post(
-        "https://infinity-api-94fa.onrender.com/api/v1/users/resend-email-verification",
+        "/users/resend-email-verification",
         {},
         config
       );

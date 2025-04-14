@@ -14,7 +14,7 @@ import FeedCard from "../../components/FeedCard/FeedCard";
 import { useDispatch, useSelector } from "react-redux";
 import ProfileSkeleton from "../../components/Skeleton/ProfileSkeleton";
 import CardSkeleton from "../../components/Skeleton/CardSkeleton";
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance"
 import getCookie from "../../Cookies/GetCookie";
 import { FixedSizeList as List } from "react-window";
 import { fetchPostAsync } from "../../features/posts/postsSlice";
@@ -49,7 +49,7 @@ function Profile() {
       try {
         await axios
           .get(
-            "https://infinity-api-94fa.onrender.com/api/v1/social-media/profile",
+            "/social-media/profile",
             config
           )
           .then((res) => {

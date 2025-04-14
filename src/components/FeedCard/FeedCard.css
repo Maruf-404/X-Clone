@@ -4,6 +4,12 @@
   border: 0.2rem solid #111  !important;
   padding: 0 !important;
   font-weight: 400 !important;
+    transition: height 0.3s ease;
+  overflow: hidden ;
+}
+
+.feed-card.no-images {
+  min-height: 300px; /* Reduced height for text-only posts */
 }
 
 .feed-card-text {

@@ -1,7 +1,7 @@
 import { Button, FormControl, Typography } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import getCookie from "../../Cookies/GetCookie";
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import { useState } from "react";
 import XInput from "../../components/XCustom/XInput";
 import XModal from "../../components/XCustom/XModal";
@@ -48,12 +48,12 @@ function EditProfile() {
 
       const dataToSend = { ...formData };
       const { data } = await axios.patch(
-        "https://infinity-api-94fa.onrender.com/api/v1/social-media/profile",
+        "/social-media/profile",
         dataToSend,
         config
       );
     } catch (error) {
-      console.log("error in Edit Profile");
+      console.log("error in Edit Profile", error);
     }
   };
 
@@ -70,16 +70,18 @@ function EditProfile() {
       const dataToSend = new FormData();
       dataToSend.append("coverImage", coverImage);
       const { data } = await axios.patch(
-        "https://infinity-api-94fa.onrender.com/api/v1/social-media/profile/cover-image",
+        "/social-media/profile/cover-image",
         dataToSend,
         config
       );
     } catch (error) {
-      console.log("Error in CoverImage Api call");
+      console.log("Error in CoverImage Api call", error);
     }
   };
 
   const submitAvatar = async () => {
+    console.log(avatar);
+    
     if (!avatar) return console.log("Error");
     try {
       const config = {
@@ -91,12 +93,12 @@ function EditProfile() {
       const dataTosend = new FormData();
       dataTosend.append("avatar", avatar);
       const { data } = await axios.patch(
-        "https://infinity-api-94fa.onrender.com/api/v1/users/avatar",
+        "/users/avatar",
         dataTosend,
         config
       );
     } catch (error) {
-      console.log("Error in Avatar Api call");
+      console.log("Error in Avatar Api call", error);
     }
   };
 

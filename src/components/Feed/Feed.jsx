@@ -14,11 +14,28 @@ function Feed() {
   const dispatch = useDispatch();
   const feedData = useSelector((state) => state.allPost.allPosts);
   const loading = useSelector((state) => state.allPost.status);
+console.log(feedData);
 
   const itemSize = 710
   const listHeight = 800;
   const listWidth = 800
 
+ const getItemSize = (index) => {
+   const post = feedData[index];
+   if (!post) return 350; // Default height
+
+   // Base height (content + metadata)
+   let height = 180;
+
+   // Add height if image exists
+   if (post.images?.length > 0) height += 300;
+
+   // Add height for long content
+   if (post.content?.length > 100)
+     height += Math.floor(post.content.length / 50) * 20;
+
+   return Math.min(height, 600); // Cap maximum height
+ };
   const Row = ({ index, key, style }) => (
     <div key={key} style={style}>
       <FeedCard
@@ -53,7 +70,7 @@ function Feed() {
           <List
             height={listHeight}
             rowCount={feedData.length}
-            rowHeight={itemSize}
+            rowHeight={getItemSize}
             width={listWidth}
             rowRenderer={Row}
             className="hide-scrollbar"

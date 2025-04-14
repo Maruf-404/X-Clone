@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
 import { useEffect, useState } from "react";
 import CardSkeleton from "../../components/Skeleton/CardSkeleton";
@@ -22,7 +22,7 @@ function Bookmark() {
     };
     try {
       const res = await axios.get(
-        "https://infinity-api-94fa.onrender.com/api/v1/social-media/bookmarks?page=1&limit=5",
+        "/social-media/bookmarks?page=1&limit=5",
         config
       );
 

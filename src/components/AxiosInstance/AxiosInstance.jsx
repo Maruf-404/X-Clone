@@ -6,10 +6,10 @@ const accessToken = getCookie('accessToken');
 
 
 const axiosInstance = axios.create({
-  baseURL: 'https://infinity-api-94fa.onrender.com', 
+  baseURL: "http://localhost:8080/api/v1",
   headers: {
-    Authorization: accessToken ? `Bearer ${accessToken}` : '',
-    'Content-Type': 'application/json',
+    Authorization: accessToken ? `Bearer ${accessToken}` : "",
+    "Content-Type": "application/json",
   },
 });
 

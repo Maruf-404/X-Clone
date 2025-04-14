@@ -10,6 +10,7 @@ import XModal from "../XCustom/XModal";
 import EditPost from "../Post/EditPost";
 import { deleteCommentAsync } from "../../features/comment/commentSlice";
 import EditComment from "../Comment/EditComment"
+import { useNavigate } from "react-router-dom";
 
 
 const options = ["Edit", "Delete"];
@@ -23,6 +24,7 @@ export default function MenuButton({ id, component, isOwner}) {
   const handleClose = () => setOpen(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const openMenu = Boolean(anchorEl);
+  const navigate = useNavigate()
   const dispatch = useDispatch();
 
   const handleClick = (event) => {
@@ -39,11 +41,13 @@ export default function MenuButton({ id, component, isOwner}) {
   const handleDelete = () => {
     if (component == "post") {
       dispatch(deletePostAsync(id));
+      
     } else {
       dispatch(deleteCommentAsync(id))
+      
     }
     handleClose()
-   
+   navigate("/home");
   };
 
   const actionMap = {
