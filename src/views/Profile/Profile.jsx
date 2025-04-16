@@ -14,9 +14,8 @@ import FeedCard from "../../components/FeedCard/FeedCard";
 import { useDispatch, useSelector } from "react-redux";
 import ProfileSkeleton from "../../components/Skeleton/ProfileSkeleton";
 import CardSkeleton from "../../components/Skeleton/CardSkeleton";
-import axios from "../../components/AxiosInstance/AxiosInstance"
+import axios from "../../components/AxiosInstance/AxiosInstance";
 import getCookie from "../../Cookies/GetCookie";
-import { FixedSizeList as List } from "react-window";
 import { fetchPostAsync } from "../../features/posts/postsSlice";
 import "./Profile.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -32,9 +31,7 @@ function Profile() {
   const [profileData, setProfileData] = useState([]);
   let accessToken = getCookie("accessToken");
 
-  const itemSize = 200;
-  const listHeight = 500;
-  const listWidth = "100%";
+
 
   useEffect(() => {
     document.title = "X clone | Profile";
@@ -47,35 +44,20 @@ function Profile() {
     };
     const getMyProfile = async () => {
       try {
-        await axios
-          .get(
-            "/social-media/profile",
-            config
-          )
-          .then((res) => {
-            setProfileData(res.data.data);
-          });
+        await axios.get("/social-media/profile", config).then((res) => {
+          setProfileData(res.data.data);
+        });
         setLoading(false);
       } catch (error) {
         console.log("Error in Profile", error);
-        toast.error("PLease refresh the page")
+        toast.error("PLease refresh the page");
       }
     };
     getMyProfile();
     dispatch(fetchPostAsync());
   }, [accessToken, dispatch]);
 
-  const row = ({ index, style }) => (
-    <div style={style}>
-      <FeedCard
-        key={myPost[index]._id}
-        id={myPost[index]._id}
-        data={myPost[index]}
-        pl={8}
-        component={"profile"}
-      />
-    </div>
-  );
+
 
   if (loading | profileLoading) {
     return (
@@ -178,7 +160,7 @@ function Profile() {
               {location ? location : ""}
             </Typography>
             <CalendarMonthOutlined fontSize="small" />
-            <Typography  fontSize=".9rem" component="span">
+            <Typography fontSize=".9rem" component="span">
               {formattedDate ? formattedDate : ""}
             </Typography>{" "}
           </div>
@@ -188,17 +170,18 @@ function Profile() {
         {" "}
         Posts <hr color="#1D98f0" />
       </div>
-      {Array.isArray(myPost) && (
-        <List
-          height={listHeight}
-          itemCount={myPost.length}
-          itemSize={itemSize}
-          width={listWidth}
-          className="hide-scrollbar"
-        >
-          {row}
-        </List>
-      )}
+      {Array.isArray(myPost) &&
+        myPost.map((data) => {
+          return (
+            <FeedCard
+              key={data._id}
+              id={data._id}
+              data={data}
+              pl={8}
+              component={"profile"}
+            />
+          );
+        })}
     </div>
   );
 }

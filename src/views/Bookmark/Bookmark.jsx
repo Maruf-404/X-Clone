@@ -3,15 +3,13 @@ import getCookie from "../../Cookies/GetCookie";
 import { useEffect, useState } from "react";
 import CardSkeleton from "../../components/Skeleton/CardSkeleton";
 import FeedCard from "../../components/FeedCard/FeedCard";
-import { FixedSizeList as List } from "react-window";
+
 
 function Bookmark() {
   let accessToken = getCookie("accessToken");
   const [bookmarkedPost, setBookmarkedPost] = useState([]);
   const [loading, setLoading] = useState(true);
-  const itemSize = 600;
-  const listHeight = 1000;
-  const listWidth = "100%";
+
 
   const getBookmarkPosts = async () => {
     const config = {
@@ -38,17 +36,7 @@ function Bookmark() {
     getBookmarkPosts();
   }, []);
 
-  const row = ({ index, style }) => (
-    <div style={style}>
-      <FeedCard
-        key={bookmarkedPost[index]._id}
-        id={bookmarkedPost[index]._id}
-        data={bookmarkedPost[index]}
-        pl={8}
-        component={"bookmark"}
-      />
-    </div>
-  );
+
   return (
     <div>
       <h2 style={{ padding: "1rem" }}>Bookmarks</h2>
@@ -63,15 +51,17 @@ function Bookmark() {
           <CardSkeleton />
         </>
       ) : (
-        <List
-          height={listHeight}
-          itemCount={bookmarkedPost.length}
-          itemSize={itemSize}
-          width={listWidth}
-          className="hide-scrollbar"
-        >
-          {row}
-        </List>
+      bookmarkedPost &&  bookmarkedPost.map((data) => {
+                return (
+                  <FeedCard
+                    key={data._id}
+                    id={data._id}
+                    data={data}
+                    pl={8}
+                    component={"Feed"}
+                  />
+                );
+              })
       )}
     </div>
   );

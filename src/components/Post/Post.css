@@ -1,14 +1,20 @@
+.create-post {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #111; /* Match your page background */
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 1rem; */
+}
+
+/* The rest of your existing CSS can remain the same */
 .post {
   display: flex;
   gap: 2rem;
   padding: 1rem;
-}
-
-.create-post {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
 }
 
 .create-post-form {
@@ -32,6 +38,7 @@
   width: 100%;
   overflow: hidden;
 }
+
 .create-post-btns {
   display: flex;
   justify-content: flex-end;

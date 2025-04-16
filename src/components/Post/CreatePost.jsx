@@ -65,7 +65,7 @@ function CreatePost({ handleClose }) {
 
         <input
           className="create-post-input"
-          placeholder="#tags (comma separated)"
+          placeholder="#tags"
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
